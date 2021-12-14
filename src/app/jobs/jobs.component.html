@@ -1,0 +1,18 @@
+<h2>List of Jobs</h2>
+
+<div *ngFor="let job of jobs" 
+    [class.selected]="job === selectedJob"
+    (click)="onSelect(job)"
+    class="card border-primary m-1 b-1 rounded">
+    <div class="card-header bg-primary  ">
+        <strong>({{job.id}}) {{job.name}}</strong> {{job.company}}
+    </div>
+    <div class="card-body">
+        {{job.description}}
+    </div>
+</div>
+
+
+<app-job-detail [job]="selectedJob"></app-job-detail>
+
+
